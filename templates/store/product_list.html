@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>لیست محصولات</title>
+</head>
+{% for product in products %}
+    <div>
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p>قیمت: {{ product.price }}</p>
+        <p>تخفیف: {{ product.discount }}</p>
+        <p>موجودی: {{ product.stock }}</p>
+    </div>
+{% empty %}
+    <p>هنوز محصولی ثبت نشده است.</p>
+{% endfor %}
