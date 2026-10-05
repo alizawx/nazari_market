@@ -1,3 +1,16 @@
 {% load test %}
 
 <p>{% hello %}</p>
+
+
+<body>
+    <p>product counts: {% count %}</p>
+
+    <p>name of product counts: {% NameCount as count %}</p>
+    {% for namecount in count %}
+        <p>{{ namecount }}</p>
+    {% endfor %}
+
+    
+
+</body>
