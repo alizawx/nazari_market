@@ -9,8 +9,12 @@
         <h2>{{ product.name }}</h2>
         <p>{{ product.description }}</p>
         <p>قیمت: {{ product.price }}</p>
-        <p>تخفیف: {{ product.discount }}</p>
-        <p>قیمت نهایی: {{product.final_price }}</p>
+        {% if product.discount > 0 %}
+            <p>تخفیف: {{ product.discount }}</p>
+        {% endif %}
+        {% if product.price != product.final_price %}
+            <p>قیمت نهایی: {{ product.final_price }}</p>
+        {% endif %}
         <p>موجودی: {{ product.stock }}</p>
     </div>
 {% empty %}
