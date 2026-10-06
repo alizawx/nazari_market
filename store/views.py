@@ -7,7 +7,6 @@ def store_home(request):
     return render(request, "store/store.html")
 
 def product_list(request):
-
     products = Product.objects.all()
     context= {
         'products':products,
