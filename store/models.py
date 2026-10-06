@@ -6,6 +6,7 @@ class Product(models.Model):
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     discount = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    categories = models.CharField(max_length=50, blank=True)
     stock = models.PositiveIntegerField()
     def final_price(self):
         return max(self.price - self.discount, 0)
